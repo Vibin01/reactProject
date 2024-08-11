@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import RecipeCard from "./components/RecipeCard";
+import SearchBar from "./components/SearchBar";
 
 const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
@@ -23,9 +24,20 @@ function App() {
     searchRecipes();
   }, []);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    searchRecipes();
+  };
+
   return (
     <div className="contanier">
       <h2>Our Recipe App</h2>
+      <SearchBar
+        handleSubmit={handleSubmit}
+        setQuery={setQuery}
+        loading={loading}
+        query={query}
+      />
       <div className="recipes">
         {recipes ? (
           recipes.map((recipes) => (

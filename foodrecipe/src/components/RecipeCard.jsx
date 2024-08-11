@@ -3,7 +3,7 @@ const RecipeCard = (recipe) => {
   console.log(recipe, "asfad");
   return (
     <>
-      <div>
+      <div className="card">
         <img src={strMealThumb} alt={strMeal} className="card-image" />
         <div className="card-body">
           <span className="category">{strCatagory}</span>
