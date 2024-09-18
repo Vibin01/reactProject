@@ -9,5 +9,6 @@
 .profile-img {
   width: 3rem;
   height: 3rem;
-  border-radius: 1rem;
+  border-radius: 2rem;
+  margin-top: 1.2rem;
 }
