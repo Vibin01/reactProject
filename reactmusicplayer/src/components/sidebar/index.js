@@ -6,15 +6,20 @@ import { FaPlay } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
 import { IoLibrary } from "react-icons/io5";
 import { FaSignOutAlt } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import apiClient from "../../spotify";
 export default function Sidebar() {
+  const [image, setImage] = useState(
+    "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=400"
+  );
+
+  useEffect(() => {
+    apiClient.get("me").then((responce) => console.log(responce));
+  }, []);
   return (
     <>
       <div className="sidebar-container">
-        <img
-          src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=400"
-          className="profile-img"
-          alt="profile"
-        />
+        <img src={image} className="profile-img" alt="profile" />
         <div>
           <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
           <SidebarButton
