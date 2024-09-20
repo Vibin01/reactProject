@@ -10,7 +10,6 @@ const Library = () => {
 
   useEffect(() => {
     APIKit.get("me/playlists").then(function (responce) {
-      console.log(responce.data);
       setPlaylist(responce.data.items);
     });
   }, []);
@@ -18,7 +17,7 @@ const Library = () => {
   const navigate = useNavigate();
 
   const playplaylist = (id) => {
-    navigate("/player", { states: { id: id } });
+    navigate("/player", { state: { id: id } });
   };
 
   return (
