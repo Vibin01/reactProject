@@ -4,7 +4,7 @@
   background-color: #27354d;
   border-radius: 20px;
   border-bottom-right-radius: 0px;
-  flex-direction: top;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
