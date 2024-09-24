@@ -57,3 +57,7 @@
 .queue-item p {
   margin: 0px;
 }
+
+.queue-list::-webkit-scrollbar {
+  display: none;
+}
